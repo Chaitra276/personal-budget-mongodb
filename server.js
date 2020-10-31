@@ -17,17 +17,9 @@ app.get('/hello',(req,res)=>{
     res.send("sample text");    
 });
 
-//var sampleData = require('./sampleData.json');
+
 app.get('/budget',(req,res)=>{
-    //console.log(sampleData);
-    //res.json(sampleData);    
-    // budgetModel.find({}).then((data) =>{
-    //     console.log(data);
-    //     res.status(200).send(data);
-    // }).catch((error)=>{
-    //     console.log(error);
-    //     res.status(500).send();
-    // })
+    
     mongoose.connect(url,{useNewUrlParser: true, useUnifiedTopology: true})
             .then(()=>{
                 console.log("Connection to the database is established");
@@ -44,8 +36,6 @@ app.get('/budget',(req,res)=>{
             })
 })
 
-
-// new post route to simulate data addition
 app.post('/budget',(req,res)=>{
     console.log("inside post");
     console.log(req.body);
